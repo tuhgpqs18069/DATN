@@ -103,6 +103,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -10442,15 +10454,15 @@ TextureImporter:
       LW3_Assets-hd_464: 93857399
       LW3_Assets-hd_45: 1037972626
       LW3_Assets-hd_489: -1543943681
-      LW3_Assets-hd_427: -752420594
       LW3_Assets-hd_254: -237264622
       LW3_Assets-hd_435: 84396785
       LW3_Assets-hd_488: -1489054867
       LW3_Assets-hd_476: -1415932052
+      LW3_Assets-hd_302: 1511382944
       LW3_Assets-hd_374: -1034784633
       LW3_Assets-hd_143: 1620103363
-      LW3_Assets-hd_302: 1511382944
       LW3_Assets-hd_445: 1930403005
+      LW3_Assets-hd_427: -752420594
       LW3_Assets-hd_239: -249923751
       LW3_Assets-hd_314: -1170848815
       LW3_Assets-hd_339: -566656803
@@ -10467,13 +10479,13 @@ TextureImporter:
       LW3_Assets-hd_13: -943585433
       LW3_Assets-hd_149: -142894328
       LW3_Assets-hd_320: 1076170377
+      LW3_Assets-hd_357: 334360249
       LW3_Assets-hd_219: -275505486
       LW3_Assets-hd_87: -1842874074
       LW3_Assets-hd_330: -798977315
       LW3_Assets-hd_125: -942238072
       LW3_Assets-hd_350: 1172033281
       LW3_Assets-hd_485: 386302839
-      LW3_Assets-hd_357: 334360249
       LW3_Assets-hd_65: 2041288110
       LW3_Assets-hd_224: -1002202020
       LW3_Assets-hd_85: 1083645061
@@ -10744,10 +10756,10 @@ TextureImporter:
       LW3_Assets-hd_34: 774728075
       LW3_Assets-hd_120: -289172133
       LW3_Assets-hd_54: 234749487
+      LW3_Assets-hd_83: -732418498
       LW3_Assets-hd_215: -1028402384
       LW3_Assets-hd_216: -1481784236
       LW3_Assets-hd_417: 855977422
-      LW3_Assets-hd_83: -732418498
       LW3_Assets-hd_225: 392336014
       LW3_Assets-hd_325: -1864665060
       LW3_Assets-hd_294: -481330627
@@ -10892,10 +10904,10 @@ TextureImporter:
       LW3_Assets-hd_3: -1877565462
       LW3_Assets-hd_361: 1616381379
       LW3_Assets-hd_186: -425498330
+      LW3_Assets-hd_22: -310902638
       LW3_Assets-hd_220: 745523189
       LW3_Assets-hd_26: 1145794295
       LW3_Assets-hd_285: -1311294903
-      LW3_Assets-hd_22: -310902638
       LW3_Assets-hd_279: 348367694
   spritePackingTag: 
   pSDRemoveMatte: 0
