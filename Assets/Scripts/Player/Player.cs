@@ -147,7 +147,7 @@ public class Player : MonoBehaviour
         {
             //Destroy(GameObject.Find("WindowTunel"));
             Destroy(collision.gameObject);
-            hiddenRoom.SetActive(false);
+            //hiddenRoom.SetActive(false);
         }
         if(collision.gameObject.tag == "elevator")
         {
