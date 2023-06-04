@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
 
     public InputField registerEmail, registerPassword, registerName, registerAge, registerConfirmPassword, registerPhoneNumber;
     // public Text registerErrorMessage;
-    public GameObject LoginMenu, RegisterMenu;
+    public GameObject LoginMenu, RegisterMenu, SelectModeMenu;
 
 
 
@@ -59,7 +59,9 @@ public class MainMenu : MonoBehaviour
             if (user.email.Equals(email) && user.password.Equals(password))
             {
                 errorMessage.text = "";
-                SceneManager.LoadScene("Scene1");
+                //SceneManager.LoadScene("Scene1");
+                LoginMenu.SetActive(false);
+                SelectModeMenu.SetActive(true);
                 return;
             }
         }
@@ -91,5 +93,18 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Them moi: " + result.id);
         RegisterMenu.SetActive(false);
         LoginMenu.SetActive(true);
+    }
+
+    public void LoadEasyMode()
+    {
+        SceneManager.LoadScene("Easy1");
+    }
+    public void LoadHardMode()
+    {
+        SceneManager.LoadScene("Hard1");
+    }
+    public void LoadStoryMode()
+    {
+        SceneManager.LoadScene("Scene1");
     }
 }

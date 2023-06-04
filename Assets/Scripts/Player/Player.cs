@@ -131,6 +131,8 @@ public class Player : MonoBehaviour
             TinhDiem(1);
         }
         **/
+
+        // Kill Player
         if (collision.gameObject.tag == "Lava" || collision.gameObject.tag == "Horn")
         {
             Destroy(GameObject.Find("Player"));
@@ -139,10 +141,16 @@ public class Player : MonoBehaviour
         {
             Destroy(GameObject.Find("Player"));
         }
+        //Controller Map
         if (collision.gameObject.tag == "scene2")
         {
             SceneManager.LoadScene("Scene2");
         }
+        if (collision.gameObject.tag == "NextEasy2")
+        {
+            SceneManager.LoadScene("Easy2");
+        }
+        //Controller Sene
         if (collision.gameObject.tag == "WindowTunel" && isDashing)
         {
             //Destroy(GameObject.Find("WindowTunel"));
