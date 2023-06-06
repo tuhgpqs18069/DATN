@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,34 +7,52 @@ using UnityEngine.UI;
 
 public class ControllerScene : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject CanvasMenu;
+    public GameObject CanvasDead;
+
+    //Chung
+    public void ExitToMenu()
     {
-        
+        SceneManager.LoadScene(1);
+        Time.timeScale = 1;
+        CanvasDead.SetActive(false);
+    }
+    public void Resume()
+    {
+        Time.timeScale = 1;
+        CanvasMenu.SetActive(false);
+    }
+    //Riêng (các scene ở chế độ khác nhau)
+
+    // Cốt truyện
+    public void ReloadScene1()
+    {
+        SceneManager.LoadScene(2);
+        Time.timeScale = 1;
+        CanvasDead.SetActive(false);
+    }
+    public void ReloadScene2()
+    {
+        SceneManager.LoadScene("Scene2");
+        Time.timeScale = 1;
+        CanvasDead.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ReloadScene3()
     {
-        
+        SceneManager.LoadScene("Scene3");
+        Time.timeScale = 1;
+        CanvasDead.SetActive(false);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void ReloadSceneTank90s()
     {
-        
-        if (collision.gameObject.tag == "scene2")
-        {
-            SceneManager.LoadScene("Scene2");
-        }
-
-        if (collision.gameObject.tag == "scene3")
-        {
-            SceneManager.LoadScene("Scene3");
-        }
-
-       
-
-
-
+        SceneManager.LoadScene("Tank90s");
+        Time.timeScale = 1;
+        CanvasDead.SetActive(false);
     }
+    // Easy Mode
+
+    // Hard Mode
+    
 }
