@@ -150,6 +150,19 @@ public class Player : MonoBehaviour
         {
             SceneManager.LoadScene("Easy2");
         }
+        if (collision.gameObject.tag == "NextEasy3")
+        {
+            SceneManager.LoadScene("Easy3");
+        }
+        if (collision.gameObject.tag == "NextHard2")
+        {
+            SceneManager.LoadScene("Hard2");
+        }
+        if (collision.gameObject.tag == "NextHard3")
+        {
+            SceneManager.LoadScene("Hard");
+        }
+        
         //Controller Sene
         if (collision.gameObject.tag == "WindowTunel" && isDashing)
         {

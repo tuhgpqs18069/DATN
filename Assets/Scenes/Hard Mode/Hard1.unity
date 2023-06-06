@@ -3186,7 +3186,7 @@ GameObject:
   - component: {fileID: 1001430661}
   m_Layer: 0
   m_Name: LW3_Assets-hd_59
-  m_TagString: NextEasy2
+  m_TagString: NextHard2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

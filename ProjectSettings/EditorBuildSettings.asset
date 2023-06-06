@@ -27,6 +27,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Easy Mode/Easy2.unity
     guid: 370296a1d1cef304bb6ae8465ffefea9
   - enabled: 1
+    path: Assets/Scenes/Easy Mode/Easy3.unity
+    guid: 40ee40b16bd343d47a9be64a47e07198
+  - enabled: 1
     path: Assets/Scenes/Hard Mode/Hard1.unity
     guid: 62baae4694b443a4c8ed0258593aa55e
+  - enabled: 1
+    path: Assets/Scenes/Hard Mode/Hard2.unity
+    guid: cc7d01642c4f23946845123d9e9eefb9
+  - enabled: 1
+    path: Assets/Scenes/Hard Mode/Hard3.unity
+    guid: 4c79da818eac5a94186bfbd94ed7460c
   m_configObjects: {}
