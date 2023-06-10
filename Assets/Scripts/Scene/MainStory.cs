@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class MainStory : MonoBehaviour
 {
-    void onEnable()
+    void OnEnable()
     {
         SceneManager.LoadScene("Scene1", LoadSceneMode.Single);
-        //SceneManager.LoadScene("Scene1");
+        //SceneManager.LoadScene("Scene1");if (collision.gameObject.tag == "scene2")
+         
     }
 }

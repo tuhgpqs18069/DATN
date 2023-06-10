@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -30,13 +31,18 @@ public class Player : MonoBehaviour
     private float dashingPower = 24f;
     // THời gian dash
     private float dashingTime = 0.2f;
+
     // Hồi chiêu (cooldown) Dash
     private float dashingCooldown = 1f;
 
     [SerializeField] private TrailRenderer tr;
-
+    //Object để dùng ẩn hiện phòng ẩn
     public GameObject hiddenRoom;
 
+    //pause game , show panel
+    public bool isPause = false;
+    public GameObject CanvasMenu;
+    public GameObject CanvasDead;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +54,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (isDashing)
         {
             return;
@@ -81,6 +88,22 @@ public class Player : MonoBehaviour
             StartCoroutine(Dash());
         }
         Flip();
+
+        //Pause game
+        if (Input.GetKey(KeyCode.P) || Input.GetKey(KeyCode.Escape))
+        {
+            isPause = !isPause;
+            if (isPause)
+            {
+                Time.timeScale = 0;
+                CanvasMenu.SetActive(true);
+            }
+            else
+            {
+                Time.timeScale = 1;
+                CanvasMenu.SetActive(false);
+            }
+        }
 
 
     }
@@ -131,23 +154,51 @@ public class Player : MonoBehaviour
             TinhDiem(1);
         }
         **/
+
+        // Kill Player
         if (collision.gameObject.tag == "Lava" || collision.gameObject.tag == "Horn")
         {
             Destroy(GameObject.Find("Player"));
+            Time.timeScale = 0;
+            CanvasDead.SetActive(true);
         }
         if (collision.gameObject.tag == "Machine")
         {
             Destroy(GameObject.Find("Player"));
+            Time.timeScale = 0;
+            CanvasDead.SetActive(true);
         }
+        //Controller Map
         if (collision.gameObject.tag == "scene2")
         {
             SceneManager.LoadScene("Scene2");
         }
+        if (collision.gameObject.tag == "NextEasy2")
+        {
+            SceneManager.LoadScene("Easy2");
+        }
+        if (collision.gameObject.tag == "NextEasy3")
+        {
+            SceneManager.LoadScene("Easy3");
+        }
+        if (collision.gameObject.tag == "NextHard2")
+        {
+            SceneManager.LoadScene("Hard2");
+        }
+        if (collision.gameObject.tag == "NextHard3")
+        {
+            SceneManager.LoadScene("Hard3");
+        }
+        if (collision.gameObject.tag == "NextHard4")
+        {
+            SceneManager.LoadScene("Hard4");
+        }
+
+        //Controller Sene
         if (collision.gameObject.tag == "WindowTunel" && isDashing)
         {
             //Destroy(GameObject.Find("WindowTunel"));
             Destroy(collision.gameObject);
-            hiddenRoom.SetActive(false);
         }
         if(collision.gameObject.tag == "elevator")
         {
@@ -170,7 +221,7 @@ public class Player : MonoBehaviour
             transform.parent = null;
         }
     }
-
+    //Script để nhân vật có thể dash 1 đoạn nhỏ
     private IEnumerator Dash()
     {
         canDash = false;
