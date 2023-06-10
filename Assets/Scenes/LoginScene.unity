@@ -169,7 +169,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 12432922}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 921eca8f907e87349afbe80191c73771, type: 3}
+  m_Script: {fileID: 11500000, guid: 5bddb52462746154e86a56e68c42cf70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inputFieldEmail: {fileID: 590464450}
@@ -184,7 +184,6 @@ MonoBehaviour:
   registerPhoneNumber: {fileID: 1825555537}
   LoginMenu: {fileID: 1124538247}
   RegisterMenu: {fileID: 1237250005}
-  SelectModeMenu: {fileID: 539409579}
 --- !u!1 &36364643
 GameObject:
   m_ObjectHideFlags: 0
@@ -1117,7 +1116,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 12432924}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: LoadStoryMode
+        m_MethodName: LoadScene1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2044,7 +2043,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 12432924}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: LoadHardMode
+        m_MethodName: LoadHard1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3923,7 +3922,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 12432924}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: LoadEasyMode
+        m_MethodName: LoadEasy1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -92,4 +92,18 @@ public class MainMenu : MonoBehaviour
         RegisterMenu.SetActive(false);
         LoginMenu.SetActive(true);
     }
+
+
+    public void LoadEasy1()
+    {
+        SceneManager.LoadScene("Easy1");
+    }
+    public void LoadHard1()
+    {
+        SceneManager.LoadScene("Hard1");
+    }
+    public void LoadScene1()
+    {
+        SceneManager.LoadScene("Scene1");
+    }
 }
