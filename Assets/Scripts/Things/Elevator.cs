@@ -21,10 +21,10 @@ public class Elevator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        StartElevator();
+        StartElevator1();
     }
 
-    void StartElevator()
+    void StartElevator1()
     {
         if (Vector2.Distance(player.position, elevatorSwitch.position) < 2.5f && Input.GetKeyDown("x"))
         {
