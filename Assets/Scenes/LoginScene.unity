@@ -184,6 +184,7 @@ MonoBehaviour:
   registerPhoneNumber: {fileID: 1825555537}
   LoginMenu: {fileID: 1124538247}
   RegisterMenu: {fileID: 1237250005}
+  SelectModemenu: {fileID: 539409579}
 --- !u!1 &36364643
 GameObject:
   m_ObjectHideFlags: 0
@@ -2747,8 +2748,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b358feefaa798a4f9fa080742830d3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstInput: {fileID: 590464450}
-  submitButton: {fileID: 1656587527}
 --- !u!1 &1170110581
 GameObject:
   m_ObjectHideFlags: 0
@@ -3225,8 +3224,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b358feefaa798a4f9fa080742830d3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstInput: {fileID: 1368863751}
-  submitButton: {fileID: 1576679496}
 --- !u!1 &1262041138
 GameObject:
   m_ObjectHideFlags: 0
