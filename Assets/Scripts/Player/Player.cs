@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
     [SerializeField] private TrailRenderer tr;
     //Object để dùng ẩn hiện phòng ẩn
     public GameObject hiddenRoom;
+    public GameObject disableBlock;
 
     //pause game , show panel
     public bool isPause = false;
@@ -219,6 +220,18 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "elevator")
         {
             transform.parent = null;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "EnterTrap")
+        {
+            disableBlock.SetActive(false);
+        }
+        if (collision.gameObject.tag == "ExitTrap")
+        {
+            disableBlock.SetActive(true);
         }
     }
     //Script để nhân vật có thể dash 1 đoạn nhỏ
