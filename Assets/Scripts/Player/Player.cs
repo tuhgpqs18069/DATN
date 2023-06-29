@@ -45,6 +45,12 @@ public class Player : MonoBehaviour
     public GameObject CanvasMenu;
     public GameObject CanvasDead;
 
+
+    //PickKeyScript
+    public Component doorCollider;
+    public GameObject keyGone;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -213,6 +219,7 @@ public class Player : MonoBehaviour
         {
             hiddenRoom.SetActive(true);
         }
+        
 
     }
     private void OnCollisionExit2D(Collision2D collision)
@@ -232,6 +239,12 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "ExitTrap")
         {
             disableBlock.SetActive(true);
+        }
+        //PickKey: Nhặt chìa khóa
+        if (collision.gameObject.tag == "Key")
+        {
+            doorCollider.GetComponent<DoorOpened>().enabled = true;
+            keyGone.SetActive(false);
         }
     }
     //Script để nhân vật có thể dash 1 đoạn nhỏ
