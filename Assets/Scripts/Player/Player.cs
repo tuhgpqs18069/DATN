@@ -220,6 +220,7 @@ public class Player : MonoBehaviour
             hiddenRoom.SetActive(true);
         }
         
+        
 
     }
     private void OnCollisionExit2D(Collision2D collision)

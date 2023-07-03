@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FallingPlatform : MonoBehaviour
+public class SlowFallingPlatform : MonoBehaviour
 {
-    private float fallDelay = 0.2f;
+    private float fallDelay = 1f;
     private float destroyDelay = 2f;
 
     [SerializeField] private Rigidbody2D rb;
