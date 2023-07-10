@@ -211,14 +211,6 @@ public class Player : MonoBehaviour
         {
             //transform.parent = collision.gameObject.transform;
         }
-        if (collision.gameObject.tag == "EnterRoom")
-        {
-            hiddenRoom.SetActive(false);
-        }
-        if (collision.gameObject.tag == "ExitRoom")
-        {
-            hiddenRoom.SetActive(true);
-        }
         
         
 
@@ -240,6 +232,14 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "ExitTrap")
         {
             disableBlock.SetActive(true);
+        }
+        if (collision.gameObject.tag == "EnterRoom")
+        {
+            hiddenRoom.SetActive(false);
+        }
+        if (collision.gameObject.tag == "ExitRoom")
+        {
+            hiddenRoom.SetActive(true);
         }
         //PickKey: Nhặt chìa khóa
         if (collision.gameObject.tag == "Key")

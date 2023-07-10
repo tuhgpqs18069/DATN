@@ -45,14 +45,52 @@ public class ControllerScene : MonoBehaviour
         CanvasDead.SetActive(false);
     }
 
-    public void ReloadSceneTank90s()
+    /*public void ReloadSceneTank90s()
     {
         SceneManager.LoadScene("Tank90s");
         Time.timeScale = 1;
         CanvasDead.SetActive(false);
-    }
+    }*/
     // Easy Mode
+    public void ReloadEasy1()
+    {
+        SceneManager.LoadScene(4);
+        Time.timeScale = 1;
+        CanvasDead.SetActive(false);
+    }
 
+    public void ReloadEasy2()
+    {
+        SceneManager.LoadScene(5);
+        Time.timeScale = 1;
+        CanvasDead.SetActive(false);
+    }
+
+    public void ReloadEasy3()
+    {
+        SceneManager.LoadScene(6);
+        Time.timeScale = 1;
+        CanvasDead.SetActive(false);
+    }
     // Hard Mode
-    
+    public void ReloadHard1()
+    {
+        SceneManager.LoadScene(7);
+        Time.timeScale = 1;
+        CanvasDead.SetActive(false);
+    }
+
+    public void ReloadHard2()
+    {
+        SceneManager.LoadScene(8);
+        Time.timeScale = 1;
+        CanvasDead.SetActive(false);
+    }
+
+    public void ReloadHard3()
+    {
+        SceneManager.LoadScene(9);
+        Time.timeScale = 1;
+        CanvasDead.SetActive(false);
+    }
 }

@@ -28,7 +28,10 @@ EditorBuildSettings:
     guid: 370296a1d1cef304bb6ae8465ffefea9
   - enabled: 1
     path: Assets/Scenes/Easy Mode/Easy3.unity
-    guid: 40ee40b16bd343d47a9be64a47e07198
+    guid: 038d793a0da973f46b31c820f81b8942
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Hard Mode/Hard1.unity
     guid: 62baae4694b443a4c8ed0258593aa55e
