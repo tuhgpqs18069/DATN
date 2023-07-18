@@ -51,6 +51,9 @@ public class MainMenu : MonoBehaviour
         // UnityWebRequest Get
         // var url = "https://63761195b5f0e1eb8501bd61.mockapi.io/users";
         //gmail hgqtu79@gmail.com
+
+
+
         var url = "https://647993f6a455e257fa635aa7.mockapi.io/Users";
         var http = new HttpRequestPortal(new Serialization());
         var result = await http.Get<ResponseMockModel[]>(url);

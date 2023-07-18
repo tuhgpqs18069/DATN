@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
@@ -17,6 +18,10 @@ public class Player : MonoBehaviour
     public float groundCheckRadius;
     public LayerMask groundLayer;
     private bool isTouchingGround;
+
+    // Các vật phẩm player được saved 
+
+    private int health = 100;
 
     // Check nhân vật đang chạy (true) hay đứng (false)
     public bool isRunning = false;
@@ -104,11 +109,18 @@ public class Player : MonoBehaviour
             {
                 Time.timeScale = 0;
                 CanvasMenu.SetActive(true);
+                //Dừng và Lưu các Info được code bên SystemData 
+                SystemData.Saving(this);
             }
             else
             {
                 Time.timeScale = 1;
                 CanvasMenu.SetActive(false);
+                // Tiếp tục và Lấy các info player được save ở trên và tiếp tục
+                PlayerSaveData data = SystemData.Loading();
+                Debug.Log(">>>>>>> Health: " + data.health);
+                Debug.Log(">>>>>>> Position: " + data.position[0] + " " + data.position[1] + " " + data.position[2]);
+
             }
         }
 
@@ -264,7 +276,11 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }
-
+    //Public để khải báo sang script khác  khi private
+    public int getHealth()
+    {
+        return this.health;
+    }
     
    
     
