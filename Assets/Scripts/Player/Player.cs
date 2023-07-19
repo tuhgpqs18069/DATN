@@ -259,6 +259,20 @@ public class Player : MonoBehaviour
             doorCollider.GetComponent<DoorOpened>().enabled = true;
             keyGone.SetActive(false);
         }
+        //PickCoin: Nhặt Vàng
+        if (collision.gameObject.tag == "Coin")
+        {
+            {
+                Destroy(collision.gameObject);
+                //Play music
+                //point_sound.Play();
+                //Particle System
+                /*ParticleSystem ps = Instantiate(coin, transform.localPosition, Quaternion.identity);
+                Destroy(ps, 1);*/
+                //+coin
+                //TinhDiem(1);
+            }
+        };
     }
     //Script để nhân vật có thể dash 1 đoạn nhỏ
     private IEnumerator Dash()
