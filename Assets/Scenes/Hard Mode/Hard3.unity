@@ -2897,6 +2897,15 @@ MonoBehaviour:
     m_Bits: 64
   scoreText: {fileID: 331463922}
   scoreText2: {fileID: 811500863}
+  offSound: {fileID: 0}
+  offMusic: {fileID: 0}
+  isSound: 0
+  isMusic: 0
+  music_sound: {fileID: 0}
+  soundGame_sound: {fileID: 0}
+  menu_sound: {fileID: 0}
+  coin_sound: {fileID: 0}
+  death_sound: {fileID: 0}
   isRunning: 0
   joystick: {fileID: 0}
   canDash: 1
@@ -2905,8 +2914,8 @@ MonoBehaviour:
   hiddenRoom: {fileID: 293018467}
   disableBlock: {fileID: 0}
   isPause: 0
-  CanvasMenu: {fileID: 0}
-  CanvasDead: {fileID: 0}
+  CanvasMenu: {fileID: 88095950}
+  CanvasDead: {fileID: 909789257}
   doorCollider: {fileID: 489139288}
   keyGone: {fileID: 667662489}
 --- !u!61 &186057652
