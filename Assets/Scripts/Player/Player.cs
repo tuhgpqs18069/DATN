@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
@@ -20,8 +22,22 @@ public class Player : MonoBehaviour
     private bool isTouchingGround;
 
     // Các vật phẩm player được saved 
-
     private int health = 100;
+    public static int diem = 0; //điểm vàng người dùng nhặt được
+    public GameObject scoreText; //Text trên Unity
+    public static int diem2 = 0; //điểm ruongw vàng người dùng nhặt được
+    public GameObject scoreText2; //Text trên Unity
+
+    // UI tắt Sound, Music
+    public GameObject offSound;
+    public GameObject offMusic;
+    public bool isSound = false;
+    public bool isMusic = false;
+    public AudioSource music_sound;
+    public AudioSource soundGame_sound;
+    public AudioSource menu_sound;
+    public AudioSource coin_sound;
+    public AudioSource death_sound;
 
     // Check nhân vật đang chạy (true) hay đứng (false)
     public bool isRunning = false;
@@ -56,12 +72,19 @@ public class Player : MonoBehaviour
     public GameObject keyGone;
 
 
+
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         //animator = GetComponent<Animator>();
-    }
+        music_sound.Play();
+        soundGame_sound.Play();
+        menu_sound.Stop();
+        coin_sound.Stop();
+        death_sound.Stop();
+}
 
     // Update is called once per frame
     void Update()
@@ -200,6 +223,10 @@ public class Player : MonoBehaviour
         {
             SceneManager.LoadScene("Easy3");
         }
+        if (collision.gameObject.tag == "NextHard1")
+        {
+            SceneManager.LoadScene("Hard1");
+        }
         if (collision.gameObject.tag == "NextHard2")
         {
             SceneManager.LoadScene("Hard2");
@@ -270,7 +297,20 @@ public class Player : MonoBehaviour
                 /*ParticleSystem ps = Instantiate(coin, transform.localPosition, Quaternion.identity);
                 Destroy(ps, 1);*/
                 //+coin
-                //TinhDiem(1);
+                TinhDiem(1);
+            }
+        };
+        if (collision.gameObject.tag == "ChestCoin")
+        {
+            {
+                Destroy(collision.gameObject);
+                //Play music
+                //point_sound.Play();
+                //Particle System
+                /*ParticleSystem ps = Instantiate(coin, transform.localPosition, Quaternion.identity);
+                Destroy(ps, 1);*/
+                //+coin
+                TinhDiem2(1);
             }
         };
     }
@@ -290,12 +330,58 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }
+
+    //Script tính điểm khi nhặt vàng
+    public void TinhDiem(int d)
+    {
+        diem += d;
+        scoreText.GetComponent<Text>().text = diem.ToString();
+    }
+    //Script tính điểm khi nhặt rương vàng 
+    public void TinhDiem2(int d2)
+    {
+        diem2 += d2;
+        scoreText2.GetComponent<Text>().text = diem2.ToString();
+    }
+
     //Public để khải báo sang script khác  khi private
     public int getHealth()
     {
         return this.health;
     }
-    
-   
-    
+
+    public void tatAmThanh()
+    {
+        isSound = !isSound;
+        if (isSound)
+        {
+            offSound.SetActive(true);
+            soundGame_sound.Stop();
+        }
+        else
+        {
+            offSound.SetActive(false);
+            soundGame_sound.Play();
+        }
+    }
+    public void tatNhac()
+    {
+        isMusic = !isMusic;
+        if (isMusic)
+        {
+            offMusic.SetActive(true);
+            music_sound.Stop();
+        }
+        else
+        {
+            offSound.SetActive(false);
+            music_sound.Play();
+        }
+    }
+
+
+
+
+
+
 }
