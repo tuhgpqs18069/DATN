@@ -61,11 +61,12 @@ public class Player : MonoBehaviour
     public GameObject hiddenRoom;
     public GameObject disableBlock;
 
-    //pause game , show panel
+    //pause game , show canvas menu,dead, tutorial
     public bool isPause = false;
     public GameObject CanvasMenu;
     public GameObject CanvasDead;
-
+    public GameObject CanvasTutorial;
+    public bool isTutorial = false;
 
     //PickKeyScript
     public Component doorCollider;
@@ -80,10 +81,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         //animator = GetComponent<Animator>();
         music_sound.Play();
-        soundGame_sound.Play();
-        menu_sound.Stop();
-        coin_sound.Stop();
-        death_sound.Stop();
+         
 }
 
     // Update is called once per frame
@@ -146,6 +144,20 @@ public class Player : MonoBehaviour
 
             }
         }
+        // On/Off CanvasTutorial
+        if (Input.GetKey(KeyCode.I))
+        {
+                isTutorial  = !isTutorial;
+                if (isTutorial)
+                {
+                    CanvasTutorial.SetActive(true);
+       
+                }
+                else
+                {
+                    CanvasTutorial.SetActive(false);
+                }
+        }
 
 
     }
@@ -202,12 +214,14 @@ public class Player : MonoBehaviour
         {
             Destroy(GameObject.Find("Player"));
             Time.timeScale = 0;
+            death_sound.Play();
             CanvasDead.SetActive(true);
         }
         if (collision.gameObject.tag == "Machine")
         {
             Destroy(GameObject.Find("Player"));
             Time.timeScale = 0;
+            death_sound.Play();
             CanvasDead.SetActive(true);
         }
         //Controller Map
@@ -298,6 +312,11 @@ public class Player : MonoBehaviour
                 Destroy(ps, 1);*/
                 //+coin
                 TinhDiem(1);
+                if(isSound == false)
+                {
+                    coin_sound.Play();
+                }
+                
             }
         };
         if (collision.gameObject.tag == "ChestCoin")
@@ -311,6 +330,10 @@ public class Player : MonoBehaviour
                 Destroy(ps, 1);*/
                 //+coin
                 TinhDiem2(1);
+                if (isSound == false)
+                {
+                    coin_sound.Play();
+                }
             }
         };
     }
@@ -356,12 +379,16 @@ public class Player : MonoBehaviour
         if (isSound)
         {
             offSound.SetActive(true);
-            soundGame_sound.Stop();
+            //soundGame_sound.Stop();
+            coin_sound.Stop();
+            death_sound.Stop();
         }
         else
         {
             offSound.SetActive(false);
-            soundGame_sound.Play();
+            //soundGame_sound.Play();
+            /*coin_sound.Play();
+            death_sound.Play();*/
         }
     }
     public void tatNhac()
@@ -374,7 +401,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            offSound.SetActive(false);
+            offMusic.SetActive(false);
             music_sound.Play();
         }
     }
