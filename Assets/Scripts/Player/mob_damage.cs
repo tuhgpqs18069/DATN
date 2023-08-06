@@ -8,7 +8,7 @@ public class mob_damage : MonoBehaviour
     public int damage;
     public PlayerHealth health;
     // Start is called before the first frame update
-    private void OnTriggerEnter2D(Collider2D collision) {
+    private void OnCollider2D(Collider2D collision) {
         if (collision.gameObject.tag == "Player") {
             health.TakeDamage(damage);
         }
